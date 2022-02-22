@@ -74,7 +74,7 @@ const mostrarProductos = ()=>{
     carritoDiv.appendChild(contenidoCarrito);
 
     carrito.forEach((element) => {
-        contenidoCarrito.innerHTML += `<div class="carrito">
+        contenidoCarrito.innerHTML += `<div class="carritoDiv">
         <h3>NOMBRE ${element.nombre}</h3>
         <h3>PRECIO ${element.precio}</h3>
         <h3>CANTIDAD ${element.cantidad}</h3>
@@ -85,7 +85,7 @@ const mostrarProductos = ()=>{
 
 const calcularTotal = () => {
     let total = carrito.reduce((acc, ite) => acc + ite.cantidad * ite.precio, 0);
-    document.body.innerHTML += `<div class="carrito"><h3>TOTAL ${total}</h3></div>`;
+    document.body.innerHTML+= `<div class="totalCarrito"><h3>TOTAL ${total}</h3></div>`;
 };
     
 saludar();
