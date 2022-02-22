@@ -41,7 +41,7 @@ const consultarProducto = () => {
 
 };    
 
-const llevarProducto = ()=>{
+const llevarProducto = () => {
     let buscarProducto = productos.find(                    // Busca dentro del inventario productos
         (element) => element.id === productoSeleccionado
     ); 
@@ -73,7 +73,7 @@ const mostrarProductos = ()=>{
     contenidoCarrito.className = "carrito";
     carritoDiv.appendChild(contenidoCarrito);
 
-    carrito.forEach((element) => {
+    carrito.forEach((element) => {                                      // Lista los elementos del carrito, suma los precios por cantidad
         contenidoCarrito.innerHTML += `<div class="carritoDiv">
         <h3>NOMBRE ${element.nombre}</h3>
         <h3>PRECIO ${element.precio}</h3>
@@ -83,7 +83,7 @@ const mostrarProductos = ()=>{
     });
 };
 
-const calcularTotal = () => {
+const calcularTotal = () => {                                                           // Muestra el total de los productos agregados
     let total = carrito.reduce((acc, ite) => acc + ite.cantidad * ite.precio, 0);
     carritoDiv.innerHTML+= `<div class="totalCarrito"><h3>TOTAL ${total}</h3></div>`;
 };
