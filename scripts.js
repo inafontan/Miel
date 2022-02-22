@@ -85,7 +85,7 @@ const mostrarProductos = ()=>{
 
 const calcularTotal = () => {
     let total = carrito.reduce((acc, ite) => acc + ite.cantidad * ite.precio, 0);
-    document.body.innerHTML+= `<div class="totalCarrito"><h3>TOTAL ${total}</h3></div>`;
+    carritoDiv.innerHTML+= `<div class="totalCarrito"><h3>TOTAL ${total}</h3></div>`;
 };
     
 saludar();

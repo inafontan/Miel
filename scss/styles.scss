@@ -38,6 +38,12 @@ body {
     margin-bottom: 10px;
 }
 
+.totalCarrito {
+    @extend.carritoDiv;
+    align-items: center;
+    margin-left: 500px;
+}
+
 .contacto {
     font-family: 'Patrick Hand', cursive;
     font-size: 18px;
