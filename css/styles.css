@@ -1,6 +1,5 @@
 header, body {
-  background: url("../imagenes/panal.jpg");
-  width: auto; }
+  background: url("../imagenes/panal.jpg"); }
 
 .encabezado {
   display: flex;
