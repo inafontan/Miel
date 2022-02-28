@@ -32,10 +32,6 @@ html, body {
   align-items: center;
   margin-left: 500px; }
 
-.contacto {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 18px; }
-
 h1 {
   font-family: 'Satisfy', cursive;
   font-size: 40px;
@@ -96,6 +92,17 @@ nav {
   box-shadow: 0 0.125rem 0.3125rem 0 rgba(2, 0, 0, 0.678);
   border-radius: 5px; }
 
+.registro h3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: yellow; }
+
+.formularioPersona {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px; }
+
 footer {
   bottom: 0%;
   box-shadow: 0 0 0.5rem 0 rgba(2, 0, 0, 0.808);
@@ -115,7 +122,7 @@ footer {
   padding-top: 3px; }
 
 @media screen and (max-width: 320px) {
-  header nav ul li {
+  .encabezado {
     box-shadow: 0 2px 5px 0 rgba(212, 212, 212, 0.918);
     border: 1px solid rgba(255, 255, 255, 0.18);
     background-size: contain; }
@@ -164,7 +171,7 @@ footer {
     align-items: center; } }
 
 @media screen and (min-width: 768px) {
-  header nav ul li {
+  .encabezado {
     border: 2px solid rgba(255, 255, 255, 0.18);
     border-radius: 20px; }
   .productos {

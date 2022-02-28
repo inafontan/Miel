@@ -43,11 +43,6 @@ body {
     margin-left: 500px;
 }
 
-.contacto {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 18px;
-}
-
 h1 {
     font-family: 'Satisfy', cursive;
     font-size: 40px;
@@ -123,13 +118,24 @@ nav  {
     @extend .carousel-control-prev-icon;
 }
 
+.registro h3{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: yellow;
+}
+
+.formularioPersona{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
 footer{ 
     bottom:0%;
     box-shadow: 0 0 0.5rem 0  rgba(2, 0, 0, 0.808);
     background-color: #e7ebee;
 }
-
-
 
 .flex-container-footer{
     display: flex;

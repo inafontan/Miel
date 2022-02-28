@@ -1,6 +1,6 @@
 @media screen and (max-width: 320px){
 
-    header nav ul li{
+    .encabezado{
         box-shadow: 0 2px 5px 0 rgba(212, 212, 212, 0.918);
         border: 1px solid rgba(255, 255, 255, 0.18);
         background-size: contain;
@@ -79,7 +79,7 @@
 
 @media screen and (min-width: 768px){
 
-    header nav ul li{
+    .encabezado{
         //backdrop-filter: blur(20px);
         //-webkit-backdrop-filter: blur(20px);
         border: 2px solid rgba(255, 255, 255, 0.18);
