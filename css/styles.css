@@ -153,7 +153,7 @@ footer {
     justify-content: left;
     flex-direction: row; }
   footer {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center; } }
 
 @media screen and (min-width: 768px) {
