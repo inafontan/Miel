@@ -1,4 +1,4 @@
-header, body {
+html, body {
   background: url("../imagenes/panal.jpg"); }
 
 .encabezado {
@@ -113,3 +113,47 @@ footer {
 
 .facebook {
   padding-top: 3px; }
+
+@media screen and (max-width: 320px) {
+  header nav ul li {
+    box-shadow: 0 2px 5px 0 rgba(212, 212, 212, 0.918);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-size: contain; }
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
+
+@media screen and (max-width: 480px) {
+  .encabezado {
+    flex-direction: row;
+    justify-content: left; }
+  header nav ul li {
+    width: auto;
+    box-shadow: 0 2px 5px 0 rgba(212, 212, 212, 0.918);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(130, 194, 231, 0.781);
+    background-size: contain; }
+  .productos {
+    flex-direction: column;
+    align-items: center; }
+  footer {
+    flex-direction: column;
+    align-items: center; } }
+
+@media screen and (min-width: 768px) {
+  header nav ul li {
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px; }
+  .productos {
+    flex-direction: row;
+    align-items: center; }
+  footer {
+    flex-direction: row;
+    align-items: center; } }
+
+@media screen and (min-width: 1024px) {
+  .flex-container-footer {
+    bottom: 0; } }
