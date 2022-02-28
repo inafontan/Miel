@@ -1,6 +1,9 @@
 @media screen and (max-width: 320px){
 
-    
+    html {
+        background-size: auto;
+    }
+
 
     header nav ul li{
         box-shadow: 0 2px 5px 0 rgba(212, 212, 212, 0.918);
@@ -8,6 +11,15 @@
         background-size: contain;
     }
 
+    .productos{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .totalcarrito{
+        justify-content: left;
+        flex-direction: row;
+    }
 
     // FOOTER 
     footer {
@@ -20,6 +32,9 @@
 
 @media screen and (max-width: 480px){
 
+    html {
+        background-size: auto;
+    }  
   
     .encabezado{
         flex-direction: row;
@@ -41,6 +56,10 @@
         align-items: center;
     }
 
+    .totalcarrito{
+        justify-content: left;
+        flex-direction: row;
+    }
 
 
     // FOOTER 
@@ -52,8 +71,9 @@
 
 @media screen and (min-width: 768px){
 
-   
-
+    html {
+        background-size: auto;
+    }
 
     header nav ul li{
         //backdrop-filter: blur(20px);
@@ -67,6 +87,11 @@
         align-items: center;
     }
 
+    .carrito{
+        display: flex;
+        align-items: center;
+    }
+
     
     // FOOTER 
     footer{
@@ -76,6 +101,11 @@
 }
 
 @media screen and (min-width: 1024px){
+
+    .productos{
+        flex-direction: row;
+        align-items: center;
+    }
 
   
     // FOOTER 

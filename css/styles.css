@@ -115,16 +115,26 @@ footer {
   padding-top: 3px; }
 
 @media screen and (max-width: 320px) {
+  html, body {
+    background-size: auto; }
   header nav ul li {
     box-shadow: 0 2px 5px 0 rgba(212, 212, 212, 0.918);
     border: 1px solid rgba(255, 255, 255, 0.18);
     background-size: contain; }
+  .productos {
+    flex-direction: column;
+    align-items: center; }
+  .totalcarrito {
+    justify-content: left;
+    flex-direction: row; }
   footer {
     display: flex;
     flex-direction: column;
     align-items: center; } }
 
 @media screen and (max-width: 480px) {
+  html, body {
+    background-size: auto; }
   .encabezado {
     flex-direction: row;
     justify-content: left; }
@@ -139,21 +149,32 @@ footer {
   .productos {
     flex-direction: column;
     align-items: center; }
+  .totalcarrito {
+    justify-content: left;
+    flex-direction: row; }
   footer {
     flex-direction: column;
     align-items: center; } }
 
 @media screen and (min-width: 768px) {
+  html, body {
+    background-size: auto; }
   header nav ul li {
     border: 2px solid rgba(255, 255, 255, 0.18);
     border-radius: 20px; }
   .productos {
     flex-direction: row;
     align-items: center; }
+  .carrito {
+    display: flex;
+    align-items: center; }
   footer {
     flex-direction: row;
     align-items: center; } }
 
 @media screen and (min-width: 1024px) {
+  .productos {
+    flex-direction: row;
+    align-items: center; }
   .flex-container-footer {
     bottom: 0; } }

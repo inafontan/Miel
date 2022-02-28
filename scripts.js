@@ -1,4 +1,4 @@
-/*let productoSeleccionado;
+let productoSeleccionado;
 
 const saludar = () => {                 
     alert("Bienvenido a nuestro Shop");         // Saludar y mostrar nombre
@@ -93,7 +93,7 @@ productoSeleccionado = consultarProducto();
 llevarProducto();
 mostrarProductos();
 calcularTotal();
-*/
+
 
 //CREAR USUARIO
 
