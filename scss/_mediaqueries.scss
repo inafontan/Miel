@@ -1,10 +1,5 @@
 @media screen and (max-width: 320px){
 
-    html {
-        background-size: auto;
-    }
-
-
     header nav ul li{
         box-shadow: 0 2px 5px 0 rgba(212, 212, 212, 0.918);
         border: 1px solid rgba(255, 255, 255, 0.18);
@@ -13,10 +8,21 @@
 
     .productos{
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
     }
 
     .totalcarrito{
+        justify-content: left;
+        flex-direction: row;
+    }
+
+    .carrito{
+        display: flex;
+        align-items: center;
+    }
+
+    .carritoDiv{
+        display: flex;
         justify-content: left;
         flex-direction: row;
     }
@@ -31,10 +37,6 @@
 }
 
 @media screen and (max-width: 480px){
-
-    html {
-        background-size: auto;
-    }  
   
     .encabezado{
         flex-direction: row;
@@ -53,10 +55,16 @@
 
     .productos{
         flex-direction: column;
+        justify-content: center;
+    }
+
+    .carrito{
+        display: flex;
         align-items: center;
     }
 
-    .totalcarrito{
+    .carritoDiv{
+        display: flex;
         justify-content: left;
         flex-direction: row;
     }
@@ -71,10 +79,6 @@
 
 @media screen and (min-width: 768px){
 
-    html {
-        background-size: auto;
-    }
-
     header nav ul li{
         //backdrop-filter: blur(20px);
         //-webkit-backdrop-filter: blur(20px);
@@ -84,7 +88,7 @@
 
     .productos{
         flex-direction: row;
-        align-items: center;
+        justify-content: center;
     }
 
     .carrito{
@@ -92,6 +96,11 @@
         align-items: center;
     }
 
+    .carritoDiv{
+        display: flex;
+        justify-content: left;
+        flex-direction: row;
+    }
     
     // FOOTER 
     footer{
@@ -104,7 +113,7 @@
 
     .productos{
         flex-direction: row;
-        align-items: center;
+        justify-content: center;
     }
 
   
