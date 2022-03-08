@@ -9,12 +9,12 @@
         justify-content: left;
     }
 
-    .navegacion {
+    .nav {
         width: auto;
         background-size: contain;
     }
 
-    .productos{
+    .contenedor{
         flex-direction: column;
         justify-content: center;
         margin-bottom: 40px;
@@ -39,12 +39,12 @@
         justify-content: left;
     }
 
-    .navegacion {
+    .nav {
         width: auto;
         background-size: contain;
     }
 
-    .productos{
+    .contenedor{
         flex-direction: column;
         justify-content: center;
         margin-bottom: 40px;
@@ -63,14 +63,19 @@
     html{
         background-size: cover;
     }
+  
+    .encabezado{
+        flex-direction: row;
+        justify-content: left;
+    }
 
-    .navegacion {
+    .nav {
         width: auto;
         background-size: contain;
     }
 
-    .productos{
-        flex-direction: row;
+    .contenedor{
+        flex-direction: column;
         justify-content: center;
         margin-bottom: 40px;
     }
@@ -88,14 +93,19 @@
     html{
         background-size: cover;
     }
+  
+    .encabezado{
+        flex-direction: row;
+        justify-content: left;
+    }
 
-    .navegacion {
+    .nav {
         width: auto;
         background-size: contain;
     }
 
-    .productos{
-        flex-direction: row;
+    .contenedor{
+        flex-direction: column;
         justify-content: center;
         margin-bottom: 40px;
     }
