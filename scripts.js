@@ -1,134 +1,145 @@
-let productoSeleccionado;
+const productos = [
+    {
+      nombre: "Miel XS",
+      precio: 250,
+      imagen: "./imagenes/XS.jfif",
+      id: 0,
+    },
+    {
+      nombre: "Miel M",
+      precio: 350,
+      imagen: "./imagenes/M.jfif",
+      id: 1,
+    },
+    {
+      nombre: "Miel L",
+      precio: 450,
+      imagen: "./imagenes/L.jfif",
+      id: 2,
+    },
+    {
+      nombre: "Miel XL",
+      precio: 650,
+      imagen: "./imagenes/XL.jfif",
+      id: 3,
+    },
+  ];
 
-const saludar = () => {                 
-    alert("Bienvenido a nuestro Shop");         // Saludar y mostrar nombre
-    let nombre = prompt("Ingrese su nombre");
-    carritoDiv.innerHTML = `<h2>Bienvenido/a ${nombre.toUpperCase()}</h2>`;
-};
-
-class Producto {
-    constructor (id, nombre, peso, precio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.peso = peso;
-        this.precio = precio;
-    }
-}
-
-const mielXS = new Producto(1, "MielXS", "250gr", 300);
-const mielM = new Producto(2, "MielM", "500gr", 500);
-const mielL = new Producto(3, "MielL", "750gr", 700);
-const mielXG = new Producto(4, "MielXG", "1000gr", 900);
-
-const productos = [mielXS, mielM, mielL, mielXG];
-
-const carrito = [ ]  // Se guardan los productos
-
-const carritoDiv = document.getElementById ("carritoDiv");
-
-const consultarProducto = () => {
-        let texto = "";
-    for (let p of productos) {                       //Recorro los productos
-        texto += `${p.id}) ${p.nombre}\n`;
-    }
-
-    let producto = parseInt(prompt(`Qué producto llevará?\n ${texto}`));             //Se muestra el resultado del recorrido anterior
-    while (isNaN(producto) || producto <1 || producto > 4) {
-        producto = parseInt(prompt(`Qué producto llevará?\n ${texto}`));
-    }
-
-    return producto; 
-
-};    
-
-const llevarProducto = () => {
-    let buscarProducto = productos.find(                    // Busca dentro del inventario productos
-        (element) => element.id === productoSeleccionado
-    ); 
-
-    let existe = carrito.some((element) => element.id === buscarProducto.id);
-    console.log(existe);
-
-    if(existe){
-        carrito.map(element=>{
-            if(element.id === buscarProducto.id){
-                element.cantidad++;
-                return element;
-            }
-        });
-    }else{
-        buscarProducto.cantidad = 1;                           // Cantidad del producto a llevar
-        carrito.push(buscarProducto);                          // Guardar en el carrito el producto selecionado 
-    }
-
-    let seguir = confirm("Desea llevar otro producto?")    // Agregar varios productos al carrito.
-    if (seguir){                                           //  Se agrega más de uno que ya está (true)
-        productoSeleccionado = consultarProducto ();
-        llevarProducto ();
-    }
-}; 
-
-const mostrarProductos = ()=>{
-    let contenidoCarrito=document.createElement("div");
-    contenidoCarrito.className = "carrito";
-    carritoDiv.appendChild(contenidoCarrito);
-
-    carrito.forEach((element) => {                                      // Lista los elementos del carrito, suma los precios por cantidad
-        contenidoCarrito.innerHTML += `<div class="carritoDiv">
-        <h3>NOMBRE ${element.nombre}</h3>
-        <h3>PRECIO ${element.precio}</h3>
-        <h3>CANTIDAD ${element.cantidad}</h3>
-        <h3>Subtotal ${element.precio * element.cantidad}</h3>
-        </div>`;
+  const contenedor = document.querySelector(".contenedor");
+  const main = document.querySelector("#mercaderia");
+  const sidebar = document.querySelector(".sidebar");
+  const btnCarrito = document.querySelector(".btn-carrito");
+  
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  
+  btnCarrito.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+  });
+  
+  const cargarProductos = () => {               // CREACIÓN DE LOS PRODUCTOS 
+    productos.forEach((element) => {            
+      main.innerHTML += `
+              <div class="tarjeta" >
+                <img class="img-mercaderia" src="${element.imagen}">     
+                
+                <div class="datos-mercaderia">
+                  <p class="nombre">${element.nombre}</p>
+                  <p class="precio"> $ <span>${element.precio}</span> </p>
+                <button class="btn-agregar" data-id="${element.id}">Agregar</button>
+                </div>
+  
+              </div>`;
     });
-};
-
-const calcularTotal = () => {                                                           // Muestra el total de los productos agregados
-    let total = carrito.reduce((acc, ite) => acc + ite.cantidad * ite.precio, 0);
-    carritoDiv.innerHTML+= `<div class="totalCarrito"><h3>TOTAL ${total}</h3></div>`;
-};
-    
-saludar();
-productoSeleccionado = consultarProducto();
-llevarProducto();
-mostrarProductos();
-calcularTotal();
-
-
-//CREAR USUARIO
-
-class Persona {
-    constructor(nombre, apellido, edad) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
+    const btnAgregar = document.querySelectorAll(".btn-agregar");
+    btnAgregar.forEach((e) =>
+      e.addEventListener("click", (e) => {
+        let cardPadre = e.target.parentElement;
+  
+        agregarAlCarrito(cardPadre);
+      })
+    );
+  };
+  
+  const agregarAlCarrito = (cardPadre) => {
+    let producto = {
+      nombre: cardPadre.querySelector(".nombre").textContent,
+      precio: Number(cardPadre.querySelector(".precio span").textContent),
+      cantidad: 1,
+      imagen: cardPadre.parentElement.querySelector("img").src,
+      id: Number(cardPadre.querySelector("button").getAttribute("data-id")),
+    };
+  
+    let productoEncontrado = carrito.find(
+      (element) => element.id === producto.id
+    );
+  
+    if (productoEncontrado) {
+      productoEncontrado.cantidad++;
+    } else {
+      carrito.push(producto);
     }
-}
-
-let arrayPersonas = []
-
-localStorage.setItem('Personas', JSON.stringify(arrayPersonas))
-let formPersona = document.getElementById('formPersona')
-let botonPersonas = document.getElementById('botonPersonas')
-let divPersonas = document.getElementById('divPersonas')
-
-formPersona.addEventListener('submit', (e) => {
-    e.preventDefault()
-    let datForm = new FormData(e.target)
-    //console.log(datForm.get('nombre')) //document.getElementById('idNombre').value
-    const persona = new Persona(datForm.get('nombre'), datForm.get('apellido'), datForm.get('edad'))
-    arrayPersonas.push(persona)
-    localStorage.setItem('Personas', JSON.stringify(arrayPersonas))
-    formPersona.reset()
-})
-
-botonPersonas.addEventListener('click', () => {
-    let personasDeStorage = JSON.parse(localStorage.getItem('Personas'))
-    personasDeStorage.forEach(persona => {
-        divPersonas.innerHTML += `
-            <p> ${persona.nombre} </p>
-            <p> ${persona.apellido} </p>
-            <p> ${persona.edad} </p>
-        `
-    }) 
-})
+    console.log(carrito);
+    mostrarCarrito();
+  };
+  
+  const mostrarCarrito = () => {            // MUESTRA PRODUCTOS AGREGADOS
+    sidebar.innerHTML = "";
+    carrito.forEach((element) => {
+      let { imagen, nombre, precio, cantidad, id } = element;
+      sidebar.innerHTML += `
+          <div class="caja--carrito" >
+            <img class="caja-carrito-img" src="${imagen}">
+            
+            <div class="caja--carrito--datos">
+              <p class="nombre">${nombre}</p>
+              <p class="cantidad">CANTIDAD: ${cantidad}</p>
+              <p class="subtotal">Subtotal: $${precio * cantidad}</p>
+              <p class="precio"> $ <span>${precio}</span> </p>
+            <button class="btn-restar" data-id="${id}">-</button>
+            <button class="btn-borrar" data-id="${id}">BORRAR</button>
+            
+            </div>
+  
+          </div>`;
+    });
+    localStorage.setItem("carrito", JSON.stringify(carrito));         // GUARDA PRODUCTOS AGREGADOS
+    aumentarNumeroCantidadCarrito();
+  };
+  
+  const restarProducto = (productoRestar) => {              // MODIFICAR ELEMENTOS AGREGADOS
+    let productoEncontrado = carrito.find(
+      (element) => element.id === Number(productoRestar)
+    );
+    if (productoEncontrado) {
+      productoEncontrado.cantidad--;
+      if (productoEncontrado.cantidad === 0) {
+        productoEncontrado.cantidad = 1;
+      }
+    }
+    mostrarCarrito();
+  };
+  
+  const borrarProducto = (productoBorrar) => {
+    carrito = carrito.filter((element) => element.id !== Number(productoBorrar));
+    mostrarCarrito();
+  };
+  
+  const escucharBotonesSidebar = () => {
+    sidebar.addEventListener("click", (e) => {
+      if (e.target.classList.contains("btn-restar")) {
+        restarProducto(e.target.getAttribute("data-id"));
+      }
+      if (e.target.classList.contains("btn-borrar")) {
+        borrarProducto(e.target.getAttribute("data-id"));
+      }
+    });
+  };
+  
+  const aumentarNumeroCantidadCarrito = () => {
+    let total = carrito.reduce((acc, ite) => acc + ite.cantidad, 0);
+    document.querySelector(".cant--carrito").textContent = total;
+  };
+  
+  cargarProductos();
+  mostrarCarrito();
+  escucharBotonesSidebar();

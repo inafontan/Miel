@@ -8,17 +8,7 @@
         <meta name="description" content="Miel natural, pura, de La Pampa">
         <link rel="shortcut icon" href="#">
 
-        <!-- GOOGLE FONTS-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-
-        <!-- FUENTE SECUNDARIA -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
-
-        <!-- FUENTE TERCIARIA -->
+        <!-- FUENTE -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
@@ -28,168 +18,44 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             
     <link rel="stylesheet" href="css/styles.css"> <!-- aquí todos los estilos -->
-    <title>Miel pura de La Pampa</title>
+    <title>Cachufas - Miel pura de La Pampa</title>
 </head>
 
-<body>
+<main>
     <header>
-        <div class="encabezado">
-            <div class="nombre"> <h1> Miel pura de La Pampa </h1> </div>
-            <div class="contacto"> Natalia - 11 - 1111 - 1111 <br> Walter - 11 - 2222 - 2222 </div>
-        </div>      
-        
-        <div class="navegacion">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="index.html"> Inicio </a> 
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav ms-auto mb-0 mb-lg-1">
-                      
-                      <li class="nav-item">
-                        <a class="nav-link" href="#ofertas"> Ofertas </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#carritoDiv"> Carrito </a>
-                      </li>
 
-                      <li class="nav-item">
-                        <a class="nav-link" href="/paginas/registro.html"> Registro </a>
-                      </li>
+        <div class="encabezado"> <h1> Miel pura de La Pampa </h1> </div>
 
-                    </ul>
-                  </div>
-                </div>
-              </nav>
+        <div class="nav">
+            <span class="cant--carrito">0</span>
+            <button class="btn-carrito" href="">Carrito</button>
         </div>
+
     </header>
 
-    <div class="carrito"> 
-        <div id="carritoDiv">
-            <div class="totalCarrito">
+    <div class="contenedor">
+        <div class="sidebar">
 
-            </div>
         </div>
+        <div id="mercaderia"></div>
     </div>
+</main>
 
-    <section class="tituloSeccion"> Nuestros Productos </section>
+<body>
 
-    <div class="productos" id="productos">
-        <div id="1">
-            <div class="card" style="width: 17rem;">
-                <img src="./imagenes/XS.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> Miel XS </h5>
-                    <p class="card-text"> 250 Gr. Miel Pura </p>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div id="2">
-            <div class="card" style="width: 17rem;">
-                <img src="./imagenes/M.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> Miel M </h5>
-                    <p class="card-text"> 500 Gr. Miel Pura </p>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div id="3">
-            <div class="card" style="width: 17rem;">
-                <img src="./imagenes/L.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> Miel L </h5>
-                    <p class="card-text"> 750 Gr - Miel Pura </p>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div id="4">
-            <div class="card" style="width: 17rem;">
-                <img src="./imagenes/XL.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> Miel XL </h5>
-                    <p class="card-text"> 1000 Gr - Miel Pura </p>
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-
-<section class="tituloSeccion"> Ofertas </section>
-
-    <div class="ofertas" id="ofertas">
-        
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            </div>
-
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./imagenes/ofertaUno.jfif" class="d-block w-50 container-fluid" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <div class="oferta">
-                    <h3> Oferta Uno </h3>
-                    <p> Miel XS con servidor panal. </p>
-                    </div>
-                </div>
-            </div>
-          
-            <div class="carousel-item">
-                <img src="./imagenes/ofertaDos.jfif" class="d-block w-50 container-fluid " alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <div class="oferta">
-                    <h3> Oferta Dos </h3>
-                    <p> Variedad Miel M. </p>
-                </div>
-            </div>
-        </div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"> Previous </span>
-          </button>
-
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"> Next </span>
-          </button>
-
-            </div>
-        </div>
-    </div>
     
-    <footer class="footer"> 
-      <div class="flex-container-footer">
-             <div class="whatsapp"> 
-                 <a href="https://api.whatsapp.com/send?phone=******" target="_blank"> 
-                     <img src="./imagenes/whatsapp.png" width="40" height="40" alt="******** (sólo mensajes)">  </a>
-             </div>
-  
-             <div class="instagram">
-                 <a href="https://www.instagram.com/*****/?hl=es" target="_blank"> 
-                     <img src="./imagenes/instagram.png" width="40" height="40" alt="Seguinos en Instagram"> </a>
-             </div>
-  
-             <div class="facebook"> 
-                 <a href="https://www.facebook.com/*******" target="_blank">
-                     <img src="./imagenes/facebook.png" width="35" height="35" alt="Visita nuestra página de Facebook"> </a>
-             </div>
-      </div> 
-    </footer>
       
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   
   <script src="scripts.js"></script>
+  
+  <footer class="footer"> 
+    <div class="flex-container-footer">
+        <div class="natalia"> Natalia - 11 - 1111 - 1111 </div>
+        <div class="walter"> Walter - 11 - 2222 - 2222 </div>
+    </div> 
+  </footer>
 </body>
 </html>

@@ -13,141 +13,129 @@ body {
     justify-content: space-between;
     margin-left: 100px;
     margin-right: 100px;
-    padding-top: 10px;
-}
-
-.carrito {
-    display: flex;
-    font-size: 18px;
-    background-color: rgb(250, 250, 7);
-    width: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 100px;
-    margin-right: 500px;
-}
-
-.carritoDiv {
-    display: flex;
-    flex-direction: column;
-    border: 3px solid black;
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-bottom: 10px;
-}
-
-.totalCarrito {
-    @extend.carritoDiv;
-    align-items: center;
-    margin-left: 500px;
+    padding-top: 20px;
 }
 
 h1 {
-    font-family: 'Satisfy', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-size: 40px;
-    background-color: rgba(255, 255, 0, 0.753);
-    border-radius: 15px;
-    box-shadow: 0 0.125rem 0.3125rem 0 rgba(2, 0, 0, 0.678);
+    background-color: rgb(255, 255, 0);
+    box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+    border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
 }
 
-nav  {
-    height: 40px;
+.nav  {
+    display: flex;
+    justify-content: right;
+    height: 60px;
+    margin-top: 30px;
     font-size: 18px;
-    box-shadow: 0 0.125rem 0.3125rem 0 rgba(2, 0, 0, 0.678);
-    color: black !important;
-    margin-top: 0%;
+    background-color: rgb(255, 255, 0);
+    box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
     font-family: 'Patrick Hand', cursive;
 }
 
-.navbar-brand { //inicio
-    font-size: 16px;
-}
-
-.tituloSeccion {
-    margin-top: 30px;
-    background-color: rgba(255, 255, 0, 0.753);
-    color: black;
-    font-family: 'Patrick Hand', cursive;
-    font-size: 18px;
-    padding-left: 50px;
-}
-
-.productos {
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-    justify-content: space-between;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.card {
-    box-shadow: 0 0.125rem 0.3125rem 0 rgba(2, 0, 0, 0.678);
-}
-
-.card-body {
+.btn-carrito{
+    border: none;
+    background-color: rgb(255, 255, 0);
+    font-size: 1rem;
     font-family: 'Patrick Hand', cursive;
 }
 
-.btn {
-    width: 240px;
-    font-family: 'Patrick Hand', cursive;
+.cant--carrito{
+    padding: 10px;
+    margin: 5px;
 }
 
-.ofertas {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-family: 'Patrick Hand', cursive;
+.contenedor {
+    margin-bottom: 150px;
 }
 
-.oferta {
-    color: black;
-    font-family: 'Patrick Hand', cursive;
+#mercaderia{
+    display: grid;
+    grid-template-columns: repeat(4,1fr)
 }
 
-.carousel-control-prev-icon {
-    background-color: black;
-    box-shadow: 0 0.125rem 0.3125rem 0 rgba(2, 0, 0, 0.678);
-    border-radius: 5px;
-}
-
-.carousel-control-next-icon {
-    @extend .carousel-control-prev-icon;
-}
-
-.registro h3{
-    display: flex;
+.sidebar{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
     justify-content: center;
-    margin-top: 20px;
-    background-color: yellow;
+    position: absolute;
+    box-shadow: 10px 10px 10px 10px rgb(15, 0, 0);
+    flex-direction: column;
+    padding-top: 20px;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 0);
+    border-radius: 15px;
+    border: 2px solid rgb(7, 7, 7);
+    width: 30%;
+    visibility: hidden;
+    left: 70%;
 }
 
-.formularioPersona{
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
+.active{
+    visibility: visible;
 }
 
-footer{ 
-    bottom:0%;
-    box-shadow: 0 0 0.5rem 0  rgba(2, 0, 0, 0.808);
-    background-color: #e7ebee;
+/* productos ecommerce */
+
+.tarjeta{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    width: 200px;
+    height: 180px;
+    font-size: 20px;
+    font-family: 'Patrick Hand', cursive;
+    box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgb(0, 0, 0);
+ }
+
+ .img-mercaderia{
+    width: 200px;
+    height: 180px;
+ }
+
+.datos-mercaderia{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgb(0, 0, 0);
+}
+
+.btn-agregar{
+    background-color: rgb(255, 255, 0);
+    border-radius: 15px;
+    border: 2px solid rgb(7, 7, 7);
+    margin-bottom: 5px;
+    box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+}
+
+/* carrito */
+.caja--carrito{
+    width: 180px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.caja-carrito-img{
+    width: 180px;
+}
+
+.caja--carrito--datos{
+    color: rgb(2, 2, 2);
+    letter-spacing: 0%;
+    border: 2px solid rgb(7, 7, 7);
 }
 
 .flex-container-footer{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-}
-
-.instagram{
-    margin-left: 0.9375rem;
-    margin-right: 0.9375rem;
-}
-
-.facebook {
-    padding-top: 3px;
+    background-color: rgb(255, 255, 0);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
