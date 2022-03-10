@@ -25,32 +25,32 @@ const productos = [
     },
   ];
 
-  const contenedor = document.querySelector(".contenedor");
-  const main = document.querySelector("#mercaderia");
-  const sidebar = document.querySelector(".sidebar");
-  const btnCarrito = document.querySelector(".btn-carrito");
+const contenedor = document.querySelector(".contenedor");
+const main = document.querySelector("#mercaderia");
+const sidebar = document.querySelector(".sidebar");
+const btnCarrito = document.querySelector(".btn-carrito");
   
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   
-  btnCarrito.addEventListener("click", () => {
+btnCarrito.addEventListener("click", () => {
     sidebar.classList.toggle("active");
-  });
+});  
   
-  const cargarProductos = () => {               // CREACIÓN DE LOS PRODUCTOS 
-    productos.forEach((element) => {            
-      main.innerHTML += `
-              <div class="tarjeta" >
-                <img class="img-mercaderia" src="${element.imagen}">     
+const cargarProductos = () => {               // CREACIÓN DE LOS PRODUCTOS 
+  productos.forEach((element) => {            
+    main.innerHTML += `
+            <div class="tarjeta" >
+              <img class="img-mercaderia" src="${element.imagen}">     
                 
-                <div class="datos-mercaderia">
-                  <p class="nombre">${element.nombre}</p>
-                  <p class="precio"> $ <span>${element.precio}</span> </p>
-                <button class="btn-agregar" data-id="${element.id}">Agregar</button>
-                </div>
+              <div class="datos-mercaderia">
+                 <p class="nombre">${element.nombre}</p>
+                 <p class="precio"> $ <span>${element.precio}</span> </p>
+               <button class="btn-agregar" data-id="${element.id}">Agregar</button>
+              </div>
   
-              </div>`;
-    });
-    const btnAgregar = document.querySelectorAll(".btn-agregar");
+            </div>`;
+});
+  const btnAgregar = document.querySelectorAll(".btn-agregar");
     btnAgregar.forEach((e) =>
       e.addEventListener("click", (e) => {
         let cardPadre = e.target.parentElement;
@@ -74,10 +74,11 @@ const productos = [
     );
   
     if (productoEncontrado) {
-      productoEncontrado.cantidad++;
+    productoEncontrado.cantidad++;
     } else {
       carrito.push(producto);
     }
+    
     console.log(carrito);
     mostrarCarrito();
   };
@@ -140,6 +141,96 @@ const productos = [
     document.querySelector(".cant--carrito").textContent = total;
   };
   
+const calcularTotal =()=>{
+  if(carrito.lenght !==0) {
+  let total = carrito.reduce(
+    (acc,ite) => acc + ite.precio * ite.cantidad,
+    0
+  );
+
+  let divTotal = document.createElement("div");
+  divTotal.className = "caja";
+  divTotal.Total.id = "total--compra";
+
+  divTotal.innerHTML = `<p> TOTAL $${total}</p><button>Finalizar compra</button>`;
+  sidebar.appendChild(divTotal);
+   
+  let botonFinalizar = document.querySelector("#total--compra");
+  botonFinalizar.onclick = () => {
+    const mixin = Swal.mixin();
+
+    mixin.fire({
+      title: "Complete sus datos:",
+      html: `Nro Tarjeta <input id="tarjeta" type="number" class="swal12"> <br>
+             Domicilio <input id="domicilio" type="text">
+             `,
+      confirmButtonText:"Comprar",
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+      showCloseButton: false,
+      allowOutsideClick: false,
+
+      preConfirm: ()=>{
+        let domicilio = Swal.getPopup().querySelector("#domicilio").value
+        if(!domicilio){
+          Swal.showValidationMessage("Por favor, complete los datos")
+        }
+        return domicilio;
+      },
+    }).then((response) =>{
+      console.log(response);
+      if(response.isConfirmed){
+        mixin.fire(
+          "Compra realizada",
+          "El pedido será enviado a "+ response.value, 
+          "success"
+          );
+        }
+    });
+  };
+}
+}
+
   cargarProductos();
   mostrarCarrito();
   escucharBotonesSidebar();
+
+const producto = {nombre: "Miel XS", precio: 250, imagen: "./imagenes/XS.jfif", id: 0} 
+let { nombre, precio, imagen, id} = producto
+
+console.log (nombre)
+console.log (precio)
+
+const producto1 = {
+  nombre: "Miel XS", 
+  precio: 250, 
+  imagen: "./imagenes/XS.jfif", 
+  id: 0
+}
+
+const producto2 = {
+  producto1
+}
+
+console.log (producto2)
+
+const producto3 = {
+  producto1,
+  precio: 350, 
+  imagen: "./imagenes/L.jfif", 
+  id: 2
+}
+
+console.log (producto3)
+
+// DECLARACION Y ASIGANCION CONDICIONAL
+const compra = (producto.precio >= 250) ? true : false
+
+// MENSAJE
+compra ? console.log("Tiene descuento") : console.log("No tiene descuento")
+
+// OPERADOR AND
+const carroCompra = []
+
+carroCompra.length === 0 && console.log("No seleccionó ningún producto aún!")
+

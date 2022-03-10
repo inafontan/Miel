@@ -114,18 +114,19 @@ h1 {
   align-items: center;
   background-color: yellow;
   padding-top: 10px;
-  padding-bottom: 10px; }
+  margin-top: 275px;
+  height: 50px; }
 
 @media screen and (max-width: 320px) {
   html, body {
     background-size: cover; }
   .encabezado {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: left; }
-  .navegacion {
+  .nav {
     width: auto;
     background-size: contain; }
-  .productos {
+  .contenedor {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 40px; }
@@ -140,10 +141,9 @@ h1 {
   .encabezado {
     flex-direction: row;
     justify-content: left; }
-  .navegacion {
-    width: auto;
+  .nav {
     background-size: contain; }
-  .productos {
+  .contenedor {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 40px; }
@@ -153,27 +153,29 @@ h1 {
     bottom: 0%; } }
 
 @media screen and (min-width: 768px) {
-  html, body {
-    background-size: cover; }
-  .navegacion {
-    width: auto;
+  .encabezado {
+    flex-direction: column;
+    justify-content: left; }
+  .nav {
     background-size: contain; }
-  .productos {
+  .contenedor {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 40px; }
   footer {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     bottom: 0%; } }
 
 @media screen and (min-width: 1024px) {
   html, body {
     background-size: cover; }
-  .navegacion {
-    width: auto;
+  .encabezado {
+    flex-direction: row;
+    justify-content: left; }
+  .nav {
     background-size: contain; }
-  .productos {
+  .contenedor {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 40px; }
