@@ -18,6 +18,17 @@ h1 {
   padding-left: 5px;
   padding-right: 5px; }
 
+h3 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 25px;
+  height: 30px;
+  background-color: yellow;
+  box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold; }
+
 .nav {
   display: flex;
   justify-content: right;
@@ -28,7 +39,7 @@ h1 {
   box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
   font-family: 'Patrick Hand', cursive; }
 
-.btn-carrito {
+.btn-carrito, .contacto {
   border: none;
   background-color: yellow;
   font-size: 1rem;
@@ -37,9 +48,6 @@ h1 {
 .cant--carrito {
   padding: 10px;
   margin: 5px; }
-
-.contenedor {
-  margin-bottom: 150px; }
 
 #mercaderia {
   display: grid;
@@ -55,14 +63,16 @@ h1 {
   padding-top: 20px;
   margin-top: 10px;
   background-color: yellow;
-  border-radius: 15px;
-  border: 2px solid #070707;
+  border-radius: 5px;
   width: 30%;
   visibility: hidden;
   left: 70%; }
 
 .active {
   visibility: visible; }
+
+.formulario {
+  margin-top: 120px; }
 
 /* productos ecommerce */
 .tarjeta {
@@ -97,14 +107,14 @@ h1 {
 .caja--carrito {
   width: 180px;
   text-align: center;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin-left: 10px; }
 
 .caja-carrito-img {
   width: 180px; }
 
 .caja--carrito--datos {
   color: #020202;
-  letter-spacing: 0%;
   border: 2px solid #070707; }
 
 .flex-container-footer {
@@ -116,6 +126,14 @@ h1 {
   padding-top: 10px;
   margin-top: 275px;
   height: 50px; }
+
+.caja {
+  color: #020202;
+  border: 2px solid #070707; }
+
+.total--compra {
+  color: #020202;
+  border: 2px solid #070707; }
 
 @media screen and (max-width: 320px) {
   html, body {
