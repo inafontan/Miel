@@ -105,7 +105,7 @@ const mostrarCarrito = () => {            // MUESTRA PRODUCTOS AGREGADOS
   carrito.forEach((element) => {
     let { imagen, nombre, precio, cantidad, id } = element;
     sidebar.innerHTML += `
-        <div class="caja--carrito" >
+        <div class="caja--carrito">
           <img class="caja-carrito-img" src="${imagen}">
           <div class="caja--carrito--datos">
             <p class="nombre">${nombre}</p>
@@ -114,104 +114,98 @@ const mostrarCarrito = () => {            // MUESTRA PRODUCTOS AGREGADOS
             <p class="precio"> $ <span>${precio}</span> </p>
           <button class="btn-restar" data-id="${id}">-</button>
           <button class="btn-borrar" data-id="${id}">BORRAR</button>
-            
           </div>
-  
           </div>`;
     });
     localStorage.setItem("carrito", JSON.stringify(carrito));         // GUARDA PRODUCTOS AGREGADOS
     aumentarNumeroCantidadCarrito();
-  
   };
   
-  const restarProducto = (productoRestar) => {                        // MODIFICAR ELEMENTOS AGREGADOS
+const restarProducto = (productoRestar) => {                        // MODIFICAR ELEMENTOS AGREGADOS
+	swaltToast("Producto Eliminado", "#ffff00", "top-end");
     
-    swaltToast("Producto Eliminado","#ffff00", "top-end");
-    
-    let productoEncontrado = carrito.find(
-      (element) => element.id === Number(productoRestar)
-    );
-    if (productoEncontrado) {
-      productoEncontrado.cantidad--;
-      if (productoEncontrado.cantidad === 0) {
-        borrarProducto(productoRestar);
-      }
-    }
-    mostrarCarrito()
-  };
-  
-  const borrarProducto = (productoBorrar) => {
-    carrito = carrito.filter((element) => element.id !== Number(productoBorrar));
-    mostrarCarrito()
-  };
-  
-  const escucharBotonesSidebar = () => {
-    sidebar.addEventListener("click", (e) => {
-      if (e.target.classList.contains("btn-restar")) {
-        restarProducto(e.target.getAttribute("data-id"));
-      }
-      if (e.target.classList.contains("btn-borrar")) {
-        borrarProducto(e.target.getAttribute("data-id"));
-      }
-    });
-  };
-  
-  const aumentarNumeroCantidadCarrito = () => {
-    let total = carrito.reduce((acc, ite) => acc + ite.cantidad, 0);
-    document.querySelector(".cant--carrito").textContent = total;
-  };
-
-  const calcularTotal =()=> {
-  if(carrito.length !== 0) { 
-  let total = carrito.reduce(
-    (acc,ite) => acc + ite.precio * ite.cantidad,
-    0
+  let productoEncontrado = carrito.find(
+    (element) => element.id === Number(productoRestar)
   );
+  if (productoEncontrado) {
+    productoEncontrado.cantidad--;
+    if (productoEncontrado.cantidad === 0) {
+      borrarProducto(productoRestar);
+    }
+	}
+  mostrarCarrito();
+};
   
-  let divTotal = document.createElement("div");
-  divTotal.className = "caja";
-  divTotal.Total.id = "total--compra";
+const borrarProducto = (productoBorrar) => {
+  carrito = carrito.filter((element) => element.id !== Number(productoBorrar));
+  mostrarCarrito();
+};
+  
+const escucharBotonesSidebar = () => {
+	sidebar.addEventListener("click", (e) => {
+		if (e.target.classList.contains("btn-restar")) {
+			restarProducto(e.target.getAttribute("data-id"));
+		}
+		if (e.target.classList.contains("btn-borrar")) {
+			borrarProducto(e.target.getAttribute("data-id"));
+    }
+  });
+};
+  
+const aumentarNumeroCantidadCarrito = () => {
+  let total = carrito.reduce((acc, ite) => acc + ite.cantidad, 0);
+  document.querySelector(".cant--carrito").textContent = total;
+};
 
-  divTotal.innerHTML = `<p>TOTAL $${total}</p><button>Finalizar compra</button>`;
-  sidebar.appendChild(divTotal);
+const calcularTotal = () => {
+  if (carrito.length !== 0) {
+    let total = carrito.reduce((acc, ite) => acc + ite.precio * ite.cantidad,
+      0
+    );
+  
+    let divTotal = document.createElement("div");
+    divTotal.className = "caja";
+    divTotal.id = "total--compra";
+
+    divTotal.innerHTML = `<p>TOTAL $${total}</p><button>Finalizar compra</button>`;
+    sidebar.appendChild(divTotal);
    
-  let botonFinalizar = document.querySelector("#total--compra")
-  botonFinalizar.onclick = () => {
-    const mixin = Swal.mixin();
+    let botonFinalizar = document.querySelector("#total--compra")
+    botonFinalizar.onclick = () => {
+      const mixin = Swal.mixin();
 
-    mixin.fire({
-      title: "Complete sus datos:",
-      html: `<input id="tarjeta" type="number" class="swal2-input" placeholder= "Nro Tarjeta"> <br>
-             <input id="domicilio" type="text" class="swal2-input" placeholder="Domicilio">
-             <p>Total : $${total}</p>
-             `,
-      confirmButtonText:"Comprar",
-      showCancelButton: true,
-      cancelButtonText: "Cancelar",
-      showCloseButton: false,
-      allowOutsideClick: false,
-      preConfirm: ()=>{
-        let domicilio = Swal.getPopup().querySelector("#domicilio").value
-        if(!domicilio){
-          Swal.showValidationMessage("Por favor, complete los datos")
-        }
-        return domicilio;
-      },
-    })
-    .then((response) =>{
-      if(response.isConfirmed){
-        console.log(response);
-        mixin.fire(
-          "Compra realizada",
-          "El pedido será enviado a "+ response.value, 
-          "success"
-        );
-      }
-      carrito = [];
-    });
-  };
-}
-}
+      mixin.fire({
+        title: "Complete sus datos:",
+        html: `<input id="tarjeta" type="number" class="swal2-input" placeholder= "Nro Tarjeta"> <br>
+					 <input id="domicilio" type="text" class="swal2-input" placeholder="Domicilio">
+           <p>Total : $${total}</p>
+          `,
+        confirmButtonText: "Comprar",
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+        showCloseButton: false,
+        allowOutsideClick: false,
+        preConfirm: () => {
+          let domicilio = Swal.getPopup().querySelector("#domicilio").value
+          if (!domicilio) {
+            Swal.showValidationMessage("Por favor, complete los datos")
+          }
+          return domicilio;
+        },
+      })
+        .then((response) => {
+          if (response.isConfirmed) {
+            console.log(response);
+            mixin.fire(
+              "Compra realizada",
+              "El pedido será enviado a " + response.value,
+              "success"
+            );
+          }
+        });
+    };
+  }
+};
 
 cargarProductos();
 mostrarCarrito();

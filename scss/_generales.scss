@@ -1,170 +1,176 @@
 html {
-    //background-color: rgba(255, 255, 0, 0.753);
-    background: url("../imagenes/panal.jpg");
+  //background-color: rgba(255, 255, 0, 0.753);
+  background: url("../imagenes/panal.jpg");
 }
 
 body {
-    @extend html;
+  @extend html;
 }
 
 .encabezado {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 20px;
 }
 
 h1 {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 40px;
-    background-color: rgb(255, 255, 0);
-    box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
-    border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+  font-family: "Patrick Hand", cursive;
+  font-size: 40px;
+  background-color: rgb(255, 255, 0);
+  box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 h3 {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 25px;
-    height: 30px;
-    background-color: rgb(255, 255, 0);
-    box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
-    margin-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-weight: bold;
+  font-family: "Patrick Hand", cursive;
+  font-size: 25px;
+  height: 30px;
+  background-color: rgb(255, 255, 0);
+  box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
 }
 
-.nav  {
-    display: flex;
-    justify-content: right;
-    height: 60px;
-    margin-top: 30px;
-    font-size: 18px;
-    background-color: rgb(255, 255, 0);
-    box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
-    font-family: 'Patrick Hand', cursive;
+.nav {
+  display: flex;
+  justify-content: right;
+  height: 60px;
+  margin-top: 30px;
+  font-size: 18px;
+  background-color: rgb(255, 255, 0);
+  box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+  font-family: "Patrick Hand", cursive;
 }
 
-.btn-carrito{
-    border: none;
-    background-color: rgb(255, 255, 0);
-    font-size: 1rem;
-    font-family: 'Patrick Hand', cursive;
+.btn-carrito {
+  border: none;
+  background-color: rgb(255, 255, 0);
+  font-size: 1rem;
+  font-family: "Patrick Hand", cursive;
 }
 
 .contacto {
-    @extend .btn-carrito
-    
+  @extend .btn-carrito;
 }
 
-.cant--carrito{
-    padding: 10px;
-    margin: 5px;
+.cant--carrito {
+  padding: 10px;
+  margin: 5px;
 }
 
-#mercaderia{
-    display: grid;
-    grid-template-columns: repeat(4,1fr)
+#mercaderia {
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
 }
 
-.sidebar{
-    display: grid;
-    grid-template-columns: repeat(2,2fr);
-    justify-content: center;
-    position: absolute;
-    box-shadow: 10px 10px 10px 10px rgb(15, 0, 0);
-    flex-direction: column;
-    padding-top: 20px;
-    margin-top: 10px;
-    background-color: rgb(255, 255, 0);
-    border-radius: 5px;
-    //border: 2px solid rgb(7, 7, 7);
-    width: 30%;
-    visibility: hidden;
-    left: 70%;
+.sidebar {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  justify-content: center;
+  position: absolute;
+  box-shadow: 10px 10px 10px 10px rgb(15, 0, 0);
+  flex-direction: column;
+  padding-top: 20px;
+  margin-top: 10px;
+  background-color: rgb(255, 255, 0);
+  border-radius: 5px;
+  //border: 2px solid rgb(7, 7, 7);
+  width: 30%;
+  visibility: hidden;
+  left: 70%;
 }
 
-.active{
-    visibility: visible;
+.active {
+  visibility: visible;
 }
 
 .formulario {
-    margin-top: 120px;
+  margin-top: 120px;
 }
 
 /* productos ecommerce */
 
-.tarjeta{
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 60px;
-    width: 200px;
-    height: 180px;
-    font-size: 20px;
-    font-family: 'Patrick Hand', cursive;
-    box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgb(0, 0, 0);
- }
-
- .img-mercaderia{
-    width: 200px;
-    height: 180px;
- }
-
-.datos-mercaderia{
-    text-align: center;
-    font-weight: bold;
-    color: black;
-    background-color: white;
-    box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgb(0, 0, 0);
+.tarjeta {
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  width: 200px;
+  height: 180px;
+  font-size: 20px;
+  font-family: "Patrick Hand", cursive;
+  box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgb(0, 0, 0);
 }
 
-.btn-agregar{
-    background-color: rgb(255, 255, 0);
-    border-radius: 15px;
-    border: 2px solid rgb(7, 7, 7);
-    margin-bottom: 5px;
-    box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+.img-mercaderia {
+  width: 200px;
+  height: 180px;
+}
+
+.datos-mercaderia {
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgb(0, 0, 0);
+}
+
+.btn-agregar {
+  background-color: rgb(255, 255, 0);
+  border-radius: 15px;
+  border: 2px solid rgb(7, 7, 7);
+  margin-bottom: 5px;
+  box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
 }
 
 /* carrito */
-.caja--carrito{
-    width: 180px;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-left: 10px;
+.caja--carrito {
+  width: 180px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
-.caja-carrito-img{
-    width: 180px;
+.caja-carrito-img {
+  width: 180px;
 }
 
-.caja--carrito--datos{
-    color: rgb(2, 2, 2);
-    border: 2px solid rgb(7, 7, 7);
+.caja--carrito--datos {
+  color: rgb(2, 2, 2);
+  border: 2px solid rgb(7, 7, 7);
 }
 
-.flex-container-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: rgb(255, 255, 0);
-    padding-top: 10px;
-    margin-top: 275px;
-    height: 50px;
+.flex-container-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(255, 255, 0);
+  padding-top: 10px;
+  margin-top: 275px;
+  height: 50px;
 }
 
 .caja {
-    color: rgb(2, 2, 2);
-    border: 2px solid rgb(7, 7, 7);
+  color: rgb(250, 0, 0);
+  border: 2px solid rgb(7, 7, 7);
 }
 
 .total--compra {
-    color: rgb(2, 2, 2);
-    border: 2px solid rgb(7, 7, 7);
+  color: rgb(250, 0, 0);
+  border: 2px solid rgb(7, 7, 7);
 }
 
+.finalizarCompra {
+  background-color: rgb(255, 0, 0);
+  border-radius: 15px;
+  border: 2px solid rgb(7, 7, 7);
+  margin-bottom: 5px;
+  box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+}

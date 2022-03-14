@@ -10,7 +10,7 @@ html, body {
   padding-top: 20px; }
 
 h1 {
-  font-family: 'Patrick Hand', cursive;
+  font-family: "Patrick Hand", cursive;
   font-size: 40px;
   background-color: yellow;
   box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
@@ -19,7 +19,7 @@ h1 {
   padding-right: 5px; }
 
 h3 {
-  font-family: 'Patrick Hand', cursive;
+  font-family: "Patrick Hand", cursive;
   font-size: 25px;
   height: 30px;
   background-color: yellow;
@@ -37,13 +37,13 @@ h3 {
   font-size: 18px;
   background-color: yellow;
   box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
-  font-family: 'Patrick Hand', cursive; }
+  font-family: "Patrick Hand", cursive; }
 
 .btn-carrito, .contacto {
   border: none;
   background-color: yellow;
   font-size: 1rem;
-  font-family: 'Patrick Hand', cursive; }
+  font-family: "Patrick Hand", cursive; }
 
 .cant--carrito {
   padding: 10px;
@@ -51,11 +51,11 @@ h3 {
 
 #mercaderia {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); }
+  grid-template-columns: repeat(4, 4fr); }
 
 .sidebar {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(3, 2fr);
   justify-content: center;
   position: absolute;
   box-shadow: 10px 10px 10px 10px #0f0000;
@@ -82,7 +82,7 @@ h3 {
   width: 200px;
   height: 180px;
   font-size: 20px;
-  font-family: 'Patrick Hand', cursive;
+  font-family: "Patrick Hand", cursive;
   box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem black; }
 
 .img-mercaderia {
@@ -128,12 +128,19 @@ h3 {
   height: 50px; }
 
 .caja {
-  color: #020202;
+  color: #fa0000;
   border: 2px solid #070707; }
 
 .total--compra {
-  color: #020202;
+  color: #fa0000;
   border: 2px solid #070707; }
+
+.finalizarCompra {
+  background-color: red;
+  border-radius: 15px;
+  border: 2px solid #070707;
+  margin-bottom: 5px;
+  box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678); }
 
 @media screen and (max-width: 320px) {
   html, body {
