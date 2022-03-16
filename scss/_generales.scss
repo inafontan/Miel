@@ -45,7 +45,7 @@ h3 {
   margin-top: 30px;
   font-size: 18px;
   background-color: rgb(255, 255, 0);
-  box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+
   font-family: "Patrick Hand", cursive;
 }
 
@@ -72,19 +72,17 @@ h3 {
 
 .sidebar {
   display: grid;
-  grid-template-columns: repeat(3, 2fr);
+  grid-template-columns: repeat(2, 2fr);
   justify-content: center;
   position: absolute;
-  box-shadow: 10px 10px 10px 10px rgb(15, 0, 0);
   flex-direction: column;
   padding-top: 20px;
-  margin-top: 10px;
+  padding-right: 5px;
   background-color: rgb(255, 255, 0);
-  border-radius: 5px;
-  //border: 2px solid rgb(7, 7, 7);
-  width: 30%;
+  border-radius: 10px;
+  width: auto;
   visibility: hidden;
-  left: 70%;
+  right: 0%;
 }
 
 .active {
@@ -157,20 +155,27 @@ h3 {
   height: 50px;
 }
 
+.divTotal {
+  display: flex;
+}
+
 .caja {
-  color: rgb(250, 0, 0);
-  border: 2px solid rgb(7, 7, 7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
 }
 
-.total--compra {
-  color: rgb(250, 0, 0);
-  border: 2px solid rgb(7, 7, 7);
-}
-
-.finalizarCompra {
-  background-color: rgb(255, 0, 0);
-  border-radius: 15px;
-  border: 2px solid rgb(7, 7, 7);
+#total--compra {
+  color: rgb(231, 45, 45);
+  font-weight: bold;
   margin-bottom: 5px;
+  font-family: "Patrick Hand", cursive;
+}
+
+.botonFinalizar {
+  font-weight: bold;
+  font-size: 20px;
   box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
 }

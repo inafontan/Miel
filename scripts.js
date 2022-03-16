@@ -108,17 +108,18 @@ const mostrarCarrito = () => {            // MUESTRA PRODUCTOS AGREGADOS
         <div class="caja--carrito">
           <img class="caja-carrito-img" src="${imagen}">
           <div class="caja--carrito--datos">
-            <p class="nombre">${nombre}</p>
-            <p class="cantidad">CANTIDAD: ${cantidad}</p>
-            <p class="subtotal">Subtotal: $${precio * cantidad}</p>
-            <p class="precio"> $ <span>${precio}</span> </p>
+            <div class="nombre">${nombre}</div>
+            <div class="cantidad">CANTIDAD: ${cantidad}</div>
+            <div class="precio"> $ <span>${precio}</span> </div>
+            <div class="subtotal">Subtotal: $${precio * cantidad}</div>
           <button class="btn-restar" data-id="${id}">-</button>
           <button class="btn-borrar" data-id="${id}">BORRAR</button>
           </div>
           </div>`;
     });
     localStorage.setItem("carrito", JSON.stringify(carrito));         // GUARDA PRODUCTOS AGREGADOS
-    aumentarNumeroCantidadCarrito();
+  aumentarNumeroCantidadCarrito();
+  calcularTotal();
   };
   
 const restarProducto = (productoRestar) => {                        // MODIFICAR ELEMENTOS AGREGADOS
@@ -163,7 +164,7 @@ const calcularTotal = () => {
       0
     );
   
-    let divTotal = document.createElement("div");
+    let divTotal = document.createElement("divTotal");
     divTotal.className = "caja";
     divTotal.id = "total--compra";
 
