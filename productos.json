@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "nombre": "Miel XS",
+        "marca": "Cachufas",
+        "precio": "350",
+        "stock": 10,
+        "img": "/imagenes/XS.jfif"
+    },
+    {
+        "id": 2,
+        "nombre": "Miel S",
+        "marca": "Cachufas",
+        "precio": "450",
+        "stock": 10,
+        "img": "/imagenes/M.jfif"
+    },
+    {
+        "id": 3,
+        "nombre": "Miel L",
+        "marca": "Cachufas",
+        "precio": "550",
+        "stock": 10,
+        "img": "/imagenes/L.jfif"
+    },
+    {
+        "id": 4,
+        "nombre": "Miel XL",
+        "marca": "Cachufas",
+        "precio": "650",
+        "stock": 10,
+        "img": "/imagenes/XL.jfif"
+    }
+]
