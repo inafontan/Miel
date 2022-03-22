@@ -1,4 +1,3 @@
-/*
 const productos = [
     {
       nombre: "Miel XS",
@@ -25,7 +24,6 @@ const productos = [
       id: 3,
     },
   ]; 
-  */
 
 const contenedor = document.querySelector(".contenedor");
 const main = document.querySelector("#mercaderia");
@@ -230,7 +228,7 @@ async function obtenerProductos() {
 obtenerProductos().then(productos => {
     productos.forEach((producto) => {
         mercaderia.innerHTML += `
-            <div class="card border-primary mb-3" id="producto${producto.id}" style="max-width: 20rem;">
+            <div class="card border-secondary mb-3" id="producto${producto.id}" style="max-width: 20rem;">
             <img src="./img/${producto.img}" class="card-img-top" alt="${producto.nombre}">
             <div class="card-header">${producto.nombre}</div>
             <div class="card-body">
@@ -244,13 +242,13 @@ obtenerProductos().then(productos => {
     })})
 
 
-
+/*
 fetch('./json/productos.json')
 .then(res => res.json())
 .then(productos => {
     productos.forEach((producto) => {
         mercaderia.innerHTML += `
-            <div class="card border-primary mb-3" id="producto${producto.id}" style="max-width: 20rem;">
+            <div class="card border-secondary mb-3" id="producto${producto.id}" style="max-width: 20rem;">
             <img src="./img/${producto.img}" class="card-img-top" alt="${producto.nombre}">
             <div class="card-header">${producto.nombre}</div>
             <div class="card-body">
@@ -263,6 +261,7 @@ fetch('./json/productos.json')
         `
     });
 })
+*/
 
     
 
