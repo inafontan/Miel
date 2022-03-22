@@ -1,112 +1,140 @@
-@media screen and (max-width: 320px){
+@media screen and (max-width: 320px) {
+  html {
+    background-size: cover;
+  }
 
-    html{
-        background-size: cover;
-    }
-  
-    .encabezado{
-        flex-direction: column;
-        justify-content: left;
-    }
+  .encabezado {
+    flex-direction: row;
+    justify-content: center;
+  }
 
-    .nav {
-        width: auto;
-        background-size: contain;
-    }
+  .nav {
+    width: auto;
+    background-size: contain;
+  }
 
-    .contenedor{
-        flex-direction:column;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-    
-    // FOOTER 
-    footer{
-        flex-direction: row;
-        align-items: center;
-        bottom: 0%;
-    }
+  .contenedor {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  #mercaderia {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+
+  .tarjeta {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+
+  h4 {
+    width: auto;
+  }
+
+  .formulario {
+    width: auto;
+  }
+
+  .form-group {
+    width: auto;
+  }
+
+  #emailHelp {
+    width: auto;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  // FOOTER
+  .flex-container-footer {
+    flex-direction: column;
+    align-items: center;
+    bottom: 0%;
+  }
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
+  html {
+    background-size: cover;
+  }
 
-    html{
-        background-size: cover;
-    }
-  
-    .encabezado{
-        flex-direction: row;
-        justify-content: left;
-    }
+  .encabezado {
+    flex-direction: row;
+    justify-content: left;
+  }
 
-    .nav {
-        background-size: contain;
-    }
+  .nav {
+    background-size: contain;
+  }
 
-    .contenedor{
-        flex-direction: column;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-    
-    // FOOTER 
-    footer{
-        flex-direction: row;
-        align-items: center;
-        bottom: 0%;
-    }
+  .contenedor {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  // FOOTER
+  footer {
+    flex-direction: row;
+    align-items: center;
+    bottom: 0%;
+  }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
+  .encabezado {
+    flex-direction: column;
+    justify-content: left;
+  }
 
-    .encabezado{
-        flex-direction: column;
-        justify-content: left;
-    }
+  .nav {
+    background-size: contain;
+  }
 
-    .nav {
-        background-size: contain;
-    }
+  .contenedor {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
 
-    .contenedor{
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-    
-    // FOOTER 
-    footer{
-        flex-direction: column;
-        align-items: center;
-        bottom: 0%;
-    }
+  // FOOTER
+  footer {
+    flex-direction: column;
+    align-items: center;
+    bottom: 0%;
+  }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
+  html {
+    background-size: cover;
+  }
 
-    html{
-        background-size: cover;
-    }
-  
-    .encabezado{
-        flex-direction: row;
-        justify-content: left;
-    }
+  .encabezado {
+    flex-direction: row;
+    justify-content: left;
+  }
 
-    .nav {
-        background-size: contain;
-    }
+  .nav {
+    background-size: contain;
+  }
 
-    .contenedor{
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-    
-    // FOOTER 
-    footer{
-        flex-direction: row;
-        align-items: center;
-        bottom: 0%;
-    }
+  .contenedor {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  // FOOTER
+  footer {
+    flex-direction: row;
+    align-items: center;
+    bottom: 0%;
+  }
 }
