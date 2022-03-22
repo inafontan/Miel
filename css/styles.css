@@ -211,7 +211,7 @@ h4 {
   font-size: 20px;
   width: 400px; }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) {
   html, body {
     background-size: cover; }
   .encabezado {
@@ -247,35 +247,128 @@ h4 {
     align-items: center;
     bottom: 0%; } }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   html, body {
     background-size: cover; }
   .encabezado {
     flex-direction: row;
-    justify-content: left; }
+    justify-content: center; }
   .nav {
+    width: auto;
     background-size: contain; }
   .contenedor {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 40px; }
-  footer {
-    flex-direction: row;
+  #mercaderia {
+    display: flex;
+    flex-direction: column;
+    width: auto; }
+  .tarjeta {
+    display: flex;
+    flex-direction: column;
+    width: auto; }
+  h4 {
+    width: auto; }
+  .formulario {
+    width: auto; }
+  .form-group {
+    width: auto; }
+  #emailHelp {
+    width: auto; }
+  .btn {
+    width: auto; }
+  .flex-container-footer {
+    flex-direction: column;
     align-items: center;
     bottom: 0%; } }
 
 @media screen and (min-width: 768px) {
+  html, body {
+    background-size: cover; }
   .encabezado {
     flex-direction: column;
-    justify-content: left; }
+    justify-content: center; }
   .nav {
+    width: auto;
     background-size: contain; }
   .contenedor {
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     margin-bottom: 40px; }
-  footer {
+  #mercaderia {
+    display: flex;
+    flex-direction: row;
+    width: auto; }
+  .tarjeta {
+    display: flex;
     flex-direction: column;
+    width: auto; }
+  h4 {
+    width: auto;
+    margin-top: 130px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    height: 30px;
+    background-color: yellow;
+    box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    color: black; }
+  .formulario {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+    width: 500px; }
+  .form-group {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: 20px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    margin-bottom: 15px;
+    width: 400px;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18); }
+  #emailHelp {
+    width: auto;
+    color: black !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: 20px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    margin-bottom: 15px; }
+  .btn {
+    width: auto;
+    color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: 60px;
+    margin-bottom: 15px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    width: 400px; }
+  .flex-container-footer {
+    flex-direction: row;
     align-items: center;
     bottom: 0%; } }
 
@@ -283,15 +376,87 @@ h4 {
   html, body {
     background-size: cover; }
   .encabezado {
-    flex-direction: row;
-    justify-content: left; }
+    flex-direction: column;
+    justify-content: center; }
   .nav {
+    width: auto;
     background-size: contain; }
   .contenedor {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 40px; }
-  footer {
+  #mercaderia {
+    display: flex;
+    flex-direction: row;
+    width: auto; }
+  .tarjeta {
+    display: flex;
+    flex-direction: column;
+    width: auto; }
+  h4 {
+    width: auto;
+    margin-top: 130px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    height: 30px;
+    background-color: yellow;
+    box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    color: black; }
+  .formulario {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+    width: 500px; }
+  .form-group {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: 20px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    margin-bottom: 15px;
+    width: 400px;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18); }
+  #emailHelp {
+    width: auto;
+    color: black !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: 20px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    margin-bottom: 15px; }
+  .btn {
+    width: auto;
+    color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: 60px;
+    margin-bottom: 15px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    width: 400px; }
+  .flex-container-footer {
     flex-direction: row;
     align-items: center;
     bottom: 0%; } }
