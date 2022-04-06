@@ -1,4 +1,4 @@
-const productos = [
+const productos = [                             // PRODUCTOS
     {
       nombre: "Miel XS",
       precio: 250,
@@ -103,9 +103,9 @@ const agregarAlCarrito = (cardPadre) => {
 const mostrarCarrito = () => {            // MUESTRA PRODUCTOS AGREGADOS
   sidebar.innerHTML = "";
   carrito.forEach((element) => {
-    let { imagen, nombre, precio, cantidad, id } = element;
+    let { imagen, nombre, precio, cantidad, id } = element; 
     sidebar.innerHTML += `
-        <div class="caja--carrito">
+        <div class="caja--carrito">                         
           <img class="caja-carrito-img" src="${imagen}">
           <div class="caja--carrito--datos">
             <div class="nombre">${nombre}</div>
@@ -142,7 +142,7 @@ const borrarProducto = (productoBorrar) => {
   mostrarCarrito();
 };
   
-const escucharBotonesSidebar = () => {
+const escucharBotonesSidebar = () => {                // BOTONES DE LA SIDEBAR
 	sidebar.addEventListener("click", (e) => {
 		if (e.target.classList.contains("btn-restar")) {
 			restarProducto(e.target.getAttribute("data-id"));
@@ -158,13 +158,13 @@ const aumentarNumeroCantidadCarrito = () => {
   document.querySelector(".cant--carrito").textContent = total;
 };
 
-const calcularTotal = () => {
+const calcularTotal = () => {                              // CALCULA TOTAL DE PRODUCTOS AGREGADOS          
   if (carrito.length !== 0) {
     let total = carrito.reduce((acc, ite) => acc + ite.precio * ite.cantidad,
       0
     );
   
-    let divTotal = document.createElement("divTotal");
+    let divTotal = document.createElement("divTotal");          // CREACIÓN DE DIV TOTAL
     divTotal.className = "caja";
     divTotal.id = "total--compra";
 
@@ -175,26 +175,26 @@ const calcularTotal = () => {
     botonFinalizar.onclick = () => {
       const mixin = Swal.mixin();
 
-      mixin.fire({
-        title: "Complete sus datos:",
+      mixin.fire({                                          // Alerta de compra finalizada
+        title: "Complete sus datos:",       
         html: `<input id="tarjeta" type="number" class="swal2-input" placeholder= "Nro Tarjeta"> <br>
 					 <input id="domicilio" type="text" class="swal2-input" placeholder="Domicilio">
            <p>Total : $${total}</p>
           `,
-        confirmButtonText: "Comprar",
+        confirmButtonText: "Comprar",     //BOTON DE CONFIRMACION
         showCancelButton: true,
-        cancelButtonText: "Cancelar",
+        cancelButtonText: "Cancelar",     //BOTON DE CANCELACION
         showCloseButton: false,
         allowOutsideClick: false,
         preConfirm: () => {
-          let domicilio = Swal.getPopup().querySelector("#domicilio").value
+          let domicilio = Swal.getPopup().querySelector("#domicilio").value     //DATOS DE COMPRA
           if (!domicilio) {
-            Swal.showValidationMessage("Por favor, complete los datos")
+            Swal.showValidationMessage("Por favor, complete los datos")       //VALIDACION DE DATOS
           }
           return domicilio;
         },
       })
-        .then((response) => {
+        .then((response) => {                                     //COMPRA REALIZADA
           if (response.isConfirmed) {
             console.log(response);
             mixin.fire(
@@ -208,7 +208,7 @@ const calcularTotal = () => {
   }
 };
 
-const vaciarCarrito = () => {             //VERRRRRRRRRR
+const vaciarCarrito = () => {             //VERIFICAR SI EL CARRITO ESTA VACIO
   if (response.isConfirmed) {
     let carrito = []
   
@@ -225,7 +225,7 @@ async function obtenerProductos() {
     return await response.json()
 }
 
-obtenerProductos().then(productos => {
+obtenerProductos().then(productos => {          //OBTENER PRODUCTOS
     productos.forEach((producto) => {
         mercaderia.innerHTML += `
             <div class="card border-secondary mb-3" id="producto${producto.id}" style="max-width: 20rem;">
@@ -243,7 +243,7 @@ obtenerProductos().then(productos => {
 
 
 /*
-fetch('./json/productos.json')
+fetch('./json/productos.json')       //OBTENER PRODUCTOS
 .then(res => res.json())
 .then(productos => {
     productos.forEach((producto) => {
