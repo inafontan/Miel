@@ -1,22 +1,12 @@
 html, body {
-  background: url("../imagenes/panal.jpg"); }
-
-.encabezado {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: 100px;
-  margin-right: 100px;
-  padding-top: 20px; }
+  background: url("../imagenes/cuenco.jpg"); }
 
 h1 {
   font-family: "Patrick Hand", cursive;
   font-size: 40px;
-  background-color: yellow;
-  box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
-  border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
+  margin-right: 600px;
   color: black; }
 
 h3 {
@@ -25,7 +15,7 @@ h3 {
   height: 30px;
   background-color: yellow;
   box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
-  margin-top: 10px;
+  margin-top: 20px;
   padding-left: 5px;
   padding-right: 5px;
   font-weight: bold;
@@ -33,11 +23,12 @@ h3 {
 
 .nav {
   display: flex;
-  justify-content: right;
+  justify-content: space-around;
   height: 60px;
   margin-top: 30px;
   font-size: 20px;
   background-color: yellow;
+  box-shadow: 0 0.125rem 0.3125rem 0.125rem rgba(2, 0, 0, 0.678);
   font-family: "Patrick Hand", cursive;
   font-weight: bold; }
 
@@ -79,16 +70,16 @@ h3 {
 .tarjeta {
   margin: auto;
   margin-top: 50px;
-  margin-bottom: 60px;
+  margin-bottom: 130px;
   width: 200px;
-  height: 180px;
+  height: 150px;
   font-size: 20px;
   font-family: "Patrick Hand", cursive;
   box-shadow: 0.125rem 0.125rem 0.3125rem 0.125rem black; }
 
 .img-mercaderia {
   width: 200px;
-  height: 180px; }
+  height: 130px; }
 
 .datos-mercaderia {
   text-align: center;
